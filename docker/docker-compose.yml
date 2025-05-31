@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  n8n:
+    image: docker.n8n.io/n8nio/n8n
+    container_name: n8n
+    ports:
+      - 5678:5678
+    environment:
+      - WEBHOOK_TUNNEL_URL=https://mighty-osprey-monthly.ngrok-free.app
+      - N8N_HOST=localhost
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+      - TZ=Asia/Bangkok
+    volumes:
+      - n8n_data:/home/node/.n8n
+    restart: unless-stopped
+
+volumes:
+  n8n_data:
