@@ -42,8 +42,9 @@ pipenv run stop
 
 ## Access the n8n Setup Page
 
-Once the service is running, open your browser and navigate to:
+Once the service is running, you can access n8n locally or via ngrok:
 
-[http://localhost:5678/setup](http://localhost:5678/setup)
+- **Local:** [http://localhost:5678/setup](http://localhost:5678/setup)
+- **Public (ngrok):** [https://mighty-osprey-monthly.ngrok-free.app/](https://mighty-osprey-monthly.ngrok-free.app/)
 
 ---

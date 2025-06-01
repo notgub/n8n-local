@@ -2,11 +2,12 @@ import subprocess
 import os
 
 compose_file = os.path.join(os.path.dirname(__file__), '../docker/docker-compose.yml')
+env_file = os.path.join(os.path.dirname(__file__), '../.env')
 
 def run_docker_compose_up():
     try:
         subprocess.run(
-            ["docker", "compose", "-p", "n8n-local-stack", "-f", compose_file, "up", "-d"],
+            ["docker", "compose", "--env-file", env_file, "-p", "n8n-local-stack", "-f", compose_file, "up", "-d"],
             check=True
         )
         print("Docker Compose started successfully with stack name 'n8n-local-stack'.")
